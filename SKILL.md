@@ -1,6 +1,27 @@
 ---
 name: paddleocr
-description: Comprehensive OCR wrapper for PaddleOCR 3.x with support for Chinese, English, and multilingual documents. Includes Windows path encoding handling, batch processing, JSON output with text positions and confidence scores. Use when Claude needs to extract text from images, scanned documents, screenshots, certificates, or any visual content.
+description: PaddleOCR 3.x文字识别与OCR提取工具。当用户需要从图片中提取文字(OCR识别/文字提取)、处理扫描文档(合同/发票/证书/表单OCR)、识别截图文字(屏幕截图/网页截图/聊天截图)、处理中文/英文/多语言文档、批量处理图片OCR、图片预处理(去噪/纠偏/增强对比度)、获取文字位置坐标和置信度、处理Windows中文路径编码问题、识别表格和版面结构(PPStructure)、手写文字识别、PDF转文字/图片转文字/照片转文字、处理低质量图片OCR、提取证书/奖状/营业执照文字、识别车牌/身份证/名片等相关任务时立即使用。支持PaddleOCR 3.x完整功能，输出JSON格式包含文字位置和置信度，兼容Windows/macOS/Linux。
+trigger:
+  - OCR识别
+  - 图片提取文字
+  - 文字识别
+  - 图片转文字
+  - 扫描文档
+  - 截图识别
+  - 中文OCR
+  - 批量OCR
+  - 证件识别
+  - 表格识别
+  - 手写识别
+  - 图片预处理
+  - PaddleOCR
+  - 文字提取
+  - 文档OCR
+  - 发票识别
+  - 证书识别
+  - PDF转文字
+  - 照片转文字
+  - 车牌识别
 ---
 
 # PaddleOCR Skill
