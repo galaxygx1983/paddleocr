@@ -149,7 +149,9 @@ class PaddleOCRWrapper:
 
         # Initialize PaddleOCR (basic OCR)
         # Note: use_angle_cls is deprecated, use use_textline_orientation instead
+        # lang parameter specifies the recognition language (ch, en, ml, etc.)
         self.ocr = PaddleOCR(
+            lang=language,  # Language for text recognition
             use_textline_orientation=True,  # Enable text line orientation detection
             use_doc_orientation_classify=False,
             use_doc_unwarping=False,
@@ -167,6 +169,7 @@ class PaddleOCRWrapper:
         if self._table_ocr is None:
             try:
                 self._table_ocr = PPStructureV3(
+                    lang=self.language,  # Language for table/layout recognition
                     use_doc_orientation_classify=False, use_doc_unwarping=False
                 )
             except Exception as e:

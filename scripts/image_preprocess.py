@@ -249,7 +249,7 @@ class ImagePreprocessor:
         deskew: bool = True,
         denoise: bool = True,
         enhance_contrast: bool = True,
-        binarize_flag: bool = False,
+        apply_binarize: bool = False,
         output_prefix: str = "processed",
     ) -> dict:
         """
@@ -261,7 +261,7 @@ class ImagePreprocessor:
             deskew: Correct rotation/skew
             denoise: Apply denoising
             enhance_contrast: Apply CLAHE
-            binarize_flag: Apply thresholding
+            apply_binarize: Apply thresholding
             output_prefix: Prefix for output files
 
         Returns:
@@ -338,7 +338,7 @@ class ImagePreprocessor:
             ImagePreprocessor.save_image(contrast_path, current_img)
             outputs["contrast"] = contrast_path
 
-        if binarize_flag:
+        if apply_binarize:
             gray = (
                 cv2.cvtColor(current_img, cv2.COLOR_BGR2GRAY)
                 if len(current_img.shape) == 3
@@ -390,7 +390,7 @@ def main():
                         deskew=args.deskew or args.all,
                         denoise=args.denoise or args.all,
                         enhance_contrast=args.contrast or args.all,
-                        binarize_flag=args.binarize or args.all,
+                        apply_binarize=args.binarize or args.all,
                         output_prefix=f.stem,
                     )
                     print(f"  Final: {outputs.get('final', 'N/A')}")
@@ -403,7 +403,7 @@ def main():
             deskew=args.deskew or args.all,
             denoise=args.denoise or args.all,
             enhance_contrast=args.contrast or args.all,
-            binarize_flag=args.binarize or args.all,
+            apply_binarize=args.binarize or args.all,
         )
         print(f"Processed: {outputs}")
 
